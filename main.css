@@ -1,0 +1,26 @@
+*{
+	margin: 0;
+
+}
+.container{
+	height:100%;
+	background-color: blue;
+}
+.header{
+	background-color: cyan;
+	height:20%;
+	font-family: sans-serif;
+	font-size:10em;
+	text-align: center;
+}
+#welcomeText{
+	font-size:2em;
+	text-align: center;
+}
+#quiz{
+	background-color: green;
+	height: 60%;
+	font-family: sans-serif;
+	
+
+}

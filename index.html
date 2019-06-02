@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trivium</title>
+	<meta name="Descrtiption" content="Triva based game">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="container">
+		<div class="header">Trivium</div>
+		<div id="quiz">
+			<h1 id="welcomeText">Welcome to Trivium!<br>Click Begin to see if you're smart enough.</h1>
+			<span id="ques1"></span>
+			<button id="ans1" onclick="score()"></button>
+			<button id="ans2" onclick="score()"></button>
+			<button id="ans3" onclick="score()"></button>
+			<button id="ans4" onclick="score()"></button>
+			<button id="submit" onclick="buildQuiz()">begin</button>
+			<button id="refresh" onclick="refreshPage()">refresh</button>
+
+
+		</div>
+		
+		<div id="results">Results</div>
+<script>
+		var questions = [0, 1, 2, 3];
+		var questText = ["What is the capital of Russia?",
+						"What is the name of Captain America?",
+						"Who invented the lightbulb?",
+						 "How many inches in a foot?"]
+		var answers = [["canberra","lyon","sydney","melbourne"],
+					  ["Steve Rodgers","Steve Roberts","Rodger Stephens","Rodger Lewis"],
+					  ["Thomas Edison","Albert Einstein","Alexander graham bell", "Alexander flemming"],
+					  ["12 inches","13 inches","8 inches","10.75 inches"]];
+		var correctAns = [["canberra"],["Steve Rodgers"],["Thomas Edison"],["12 inches"]];
+
+
+		/////////// Arrays^  /////////////
+
+
+
+
+//////////////////////////////////////////////////////////////////
+
+		//Random question 1
+		var random1 = Math.floor(Math.random() * questions.length);
+		var choice1 = questions[random1];
+		var text1 = questText[choice1];
+		var answer11 = answers[choice1][0];
+		var answer12 = answers[choice1][1];
+		var answer13 = answers[choice1][2];
+		var answer14 = answers[choice1][3];
+		//console.log(text1+" "+answer11+" or "+answer12);
+		questions.splice(random1, 1);
+
+		/*//Random question 2
+		var random2 = Math.floor(Math.random() * questions.length);
+		var choice2 = questions[random2];
+		var text2 = questText[choice2];
+		var answer21 = ansOrder[choice2][0];
+		var answer22 = ansOrder[choice2][1];
+		console.log(text2+" "+answer21+" or "+answer22);
+		questions.splice(random2, 1);
+
+		//Random question 3
+		var random3 = Math.floor(Math.random() * questions.length);
+		var choice3 = questions[random3];
+		var text3 = questText[choice3];
+		var answer31 = ansOrder[choice3][0];
+		var answer32 = ansOrder[choice3][1];
+		console.log(text3+" "+answer31+" or "+answer32);
+		questions.splice(random3, 1);
+
+		//Random question 4
+		var random4 = Math.floor(Math.random() * questions.length);
+		var choice4 = questions[random4];
+		var text4 = questText[choice4];
+		var answer41 = ansOrder[choice4][0];
+		var answer42 = ansOrder[choice4][1];
+		console.log(text4+" "+answer41+" or "+answer42);
+		questions.splice(random4, 1);
+*/
+//////////////////////////////////////////////////////////////////
+
+		function buildQuiz(){
+
+
+
+			document.getElementById("ques1").innerHTML = text1;
+			document.getElementById("ans1").innerHTML = answer11;
+			document.getElementById("ans2").innerHTML = answer12;
+			document.getElementById("ans3").innerHTML = answer13;
+			document.getElementById("ans4").innerHTML = answer14;
+			document.getElementById("welcomeText").innerHTML = "";
+
+
+			
+			//document.getElementById("answer").innerHTML = ansText;
+			
+		}
+		////////////////////////////////////////////////////////////
+		function score(){
+
+			document.getElementById("ans1").innerHTML = "";
+			document.getElementById("ans2").innerHTML = "";
+			document.getElementById("ans3").innerHTML = "";
+			document.getElementById("ans4").innerHTML = "";
+
+		}
+		///////////////////////////////////////////////////////
+		function hideButton(button){
+			document.getElementById("submit").style.display = "none";
+		}
+		/////////////// output^ /////////////////////
+		function refreshPage(button){
+			document.getElementById("refresh").location.reload(true);
+		}
+
+	</script>
+	</div>
+</body>
+	
+</html>
